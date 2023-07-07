@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
+import Persons from './components/Persons/Persons';
 
 function App() {
   return (
     <div className="App">
+      <Persons></Persons>
       <Countries></Countries>
+
     </div>
   );
 }
@@ -21,11 +24,12 @@ function Countries() {
   return (
 
     <div>
+      <h1>Explore All Countries!!</h1>
+      <h4>Available Countries: {countries.length}</h4>
       {
         countries.map(country => <DisplayCountry name={country.name.common} population={country.population} image={country.flags.png}></DisplayCountry>)
       }
-      <h1>Explore All Countries!!</h1>
-      <h4>Available Countries: {countries.length}</h4>
+
     </div>
   )
 }

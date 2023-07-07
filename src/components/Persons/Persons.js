@@ -12,9 +12,12 @@ const Persons = () => {
     return (
         <div>
             <h1>Total User: {users.length}</h1>
-            {
-                users.map(user => <Person name={user.name} userName={user.username} email={user.email} address={user.address.city}></Person>)
-            }
+            <div className='countries-container'>
+                {
+                    users.map(user => <Person user={user} key={user.id}></Person>)
+                }
+            </div>
+
         </div>
     );
 };
